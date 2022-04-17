@@ -6,7 +6,6 @@ import re
 from functools import wraps
 from datetime import datetime
 
-#Author:gewuzhang
 #Purpose: aws ec2|rds官方维护通知接入中间件企业微信报警，在 aws lambda中使用
 
 TOPICARN = 'arn:aws:sns:us-west-2:660338696248:CloudWatchAlarm'
