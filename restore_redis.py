@@ -8,12 +8,11 @@ import queue
 import logging
 from datetime import datetime,timedelta
 from dateutil.tz import *
-#定时更新redis数据
-
+# restore redis cluster from sanpshot
 
 client = boto3.client('elasticache','us-west-2')
 
-def exist(rgid):
+def is_exist(rgid):
     """验证rdis实例是否存在
     :param instance_id: redis复制组id
     """
@@ -220,7 +219,7 @@ def validate(redis_list):
     clusterid_list =[
         redis
         for redis in redis_list
-        if exist(redis)
+        if is_exist(redis)
     ]
     assert clusterid_list,sys.exit()
     return clusterid_list
