@@ -1,2 +1,2 @@
 # README #
-Daily Scripts
+Shell Scripts 
